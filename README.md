@@ -2,6 +2,16 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0.
 
+## Configuration
+
+Update `src/environments/environment.ts` with:
+
+- `apiBaseUrl`: the deployed REST endpoint (ex.: `https://seu-projeto.up.railway.app/api/consultores`)
+- `firebase.apiKey`: the Web API Key from Firebase (Project settings → General → Your apps)
+- `firebase.projectId`: optional helper to keep track of which Firebase project is being used
+
+With the values in place, just run `npm start`, use the login form (e-mail/senha do Firebase Auth) and the application will fetch/store the ID token automatically for all API requests.
+
 ## Development server
 
 To start a local development server, run:
