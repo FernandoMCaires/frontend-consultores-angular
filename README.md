@@ -46,6 +46,16 @@ ng build
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
+## Deploying to Railway
+
+1. Conecte o repositório `fernandoMCaires/frontend-consultores-angular` a um serviço na Railway usando **Deploy from GitHub Repo**.
+2. Em **Settings → Build & Deploy**, configure:
+   - **Build command**: `npm ci && npm run build` (ou `npm install && npm run build`);
+   - **Start command**: `npm run serve:prod`;
+   - **Output/Publish directory**: deixe em branco; o `server.js` serve diretamente `dist/consultores-front/browser`.
+3. Adicione variáveis de ambiente necessárias (ex.: `API_URL`) na seção **Variables**.
+4. Clique em **Redeploy**. O `server.js` detecta `process.env.PORT` automaticamente e atende todas as rotas via `dist/consultores-front/browser`.
+
 ## Running unit tests
 
 To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
